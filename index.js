@@ -12,5 +12,8 @@ const PASSWORD = CONFIG.password;
 
     if (loggedIn) {
         console.log('Logged in successfully!');
+
+        let items = await facebook.marketplace('nintendo switch');
+        console.log(items);
     }
 })();
