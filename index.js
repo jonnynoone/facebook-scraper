@@ -13,7 +13,15 @@ const PASSWORD = CONFIG.password;
     if (loggedIn) {
         console.log('Logged in successfully!');
 
-        let items = await facebook.marketplace('nintendo switch');
-        console.log(items);
+        // Connect to Mongo DB
+        await facebook.connectToMongo();
+
+        // Search for items from FB marketplace
+        // let items = await facebook.marketplace('gameboy');
+        // console.log(items);
+
+        // Get posts of specific FB user
+        let posts = await facebook.getUserPosts(100042185474581);
+        console.log(posts);
     }
 })();
